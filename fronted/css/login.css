@@ -1,0 +1,283 @@
+
+:root {
+    --kc-green: #198754;
+    --kc-green-dark: #126b40;
+    --kc-green-light: #e5f5eb;
+    --kc-background: #f2f7f3;
+    --kc-text: #26352e;
+    --kc-muted: #718078;
+    --kc-border: #e1e9e3;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--kc-text);
+    background: var(--kc-background);
+}
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 18px 20px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #dcefe2 0,
+            transparent 35%
+        ),
+        var(--kc-background);
+}
+
+/* TARJETA PRINCIPAL */
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 36px;
+    background: #ffffff;
+    border: 1px solid var(--kc-border);
+    border-radius: 24px;
+    box-shadow: 0 12px 40px rgba(30, 60, 40, 0.08);
+}
+
+/* MARCA */
+
+.brand-icon {
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 14px;
+    border-radius: 21px;
+    background: var(--kc-green-light);
+    color: var(--kc-green);
+    font-size: 39px;
+}
+
+.login-card > h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.brand-description {
+    margin: 6px 0 30px;
+    text-align: center;
+    color: var(--kc-muted);
+    font-size: 13px;
+}
+
+/* BIENVENIDA */
+
+.welcome-text {
+    margin-bottom: 24px;
+}
+
+.welcome-text h2 {
+    margin-bottom: 7px;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.welcome-text p {
+    margin: 0;
+    color: var(--kc-muted);
+    font-size: 13px;
+}
+
+/* FORMULARIO */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group > label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--kc-border);
+    border-radius: 13px;
+    background: #fbfdfb;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--kc-green);
+    box-shadow: 0 0 0 3px rgba(25, 135, 84, 0.10);
+}
+
+.input-wrapper > i {
+    flex-shrink: 0;
+    color: var(--kc-green);
+    font-size: 19px;
+}
+
+.input-wrapper .form-control {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+    color: var(--kc-text);
+    font-size: 13px;
+}
+
+.input-wrapper .form-control::placeholder {
+    color: #9aa69e;
+}
+
+/* RECORDAR Y RECUPERAR */
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 4px 0 24px;
+    font-size: 11px;
+}
+
+.remember-option {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--kc-muted);
+    cursor: pointer;
+}
+
+.remember-option input {
+    accent-color: var(--kc-green);
+}
+
+.forgot-link {
+    color: var(--kc-green-dark);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* BOTÓN PRINCIPAL */
+
+.login-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 53px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 14px;
+    background: var(--kc-green);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.login-button:hover {
+    background: var(--kc-green-dark);
+}
+
+.login-button:active {
+    transform: scale(0.98);
+}
+
+/* PIE Y SEGURIDAD */
+
+.security-note {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    margin-top: 25px;
+    color: var(--kc-muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+.security-note i {
+    color: var(--kc-green);
+    font-size: 15px;
+}
+
+.login-footer {
+    margin-top: 23px;
+    color: var(--kc-muted);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* CELULARES */
+
+@media (max-width: 480px) {
+    .login-page {
+        justify-content: center;
+        padding: 20px 15px;
+    }
+
+    .login-card {
+        max-width: 400px;
+        padding: 27px 22px;
+        border-radius: 22px;
+    }
+
+    .brand-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 34px;
+        border-radius: 18px;
+    }
+
+    .login-card > h1 {
+        font-size: 26px;
+    }
+
+    .welcome-text h2 {
+        font-size: 21px;
+    }
+
+    .login-options {
+        font-size: 10px;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}

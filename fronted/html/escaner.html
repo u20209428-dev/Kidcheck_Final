@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación | KidCheck</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="bg-white border-bottom shadow-sm py-3">
+        <div class="container-fluid px-4">
+            <div class="d-flex align-items-center gap-3">
+                <!-- Check verde -->
+                <div class="check-icon">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <!-- Título -->
+                <div class="flex-grow-1">
+                    <h1 class="h4 fw-bold text-dark mb-1">
+                        Registro de Ingreso
+                    </h1>
+                    <p class="text-secondary mb-0 small">
+                        Control de asistencia
+                    </p>
+                </div>
+
+                <!-- Estado y cerrar sesión -->
+                <div class="header-actions">
+
+                    <span class="badge rounded-pill text-bg-success px-3 py-2">
+                        <i class="bi bi-check2-circle me-1"></i>
+                        Activo
+                    </span>
+
+                    <form action="/logout" method="post" class="logout-form">
+                        <button type="submit" class="logout-button">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span>Cerrar sesión</span>
+                        </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container py-4">
+
+        <!-- ESCÁNER QR -->
+        <section class="content-card p-4 mb-4">
+
+            <h2 class="section-title">
+                <i class="bi bi-qr-code-scan me-2"></i>
+                Escanear QR Estudiantes
+            </h2>
+
+            <p class="section-description mb-3">
+                Escanea el código QR para registrar el ingreso del estudiante.
+            </p>
+
+            <div class="camera-area">
+                <div class="scan-frame">
+                    <span class="corner top-left"></span>
+                    <span class="corner top-right"></span>
+                    <span class="corner bottom-left"></span>
+                    <span class="corner bottom-right"></span>
+
+                    <i class="bi bi-camera camera-icon"></i>
+                    <p>Área de escaneo QR</p>
+                </div>
+            </div>
+
+            <p class="scanner-note mt-3 mb-0">
+                <i class="bi bi-info-circle me-1"></i>
+                El lector se conectará al sistema de registro en una etapa posterior.
+            </p>
+
+        </section>
+        <!-- DATOS DEL ESTUDIANTE -->
+        <section class="content-card p-4 mb-4">
+
+            <h2 class="section-title mb-3">
+                <i class="bi bi-person-vcard me-2"></i>
+                Datos del estudiante
+            </h2>
+
+            <!--
+                FUTURO SPRING BOOT / THYMELEAF:
+                Reemplazar los valores de ejemplo por atributos del objeto
+                estudiante enviado por el controlador.
+            -->
+            <div class="student-profile" th:if="${estudiante != null}">
+
+                <h3 class="student-name" th:text="${estudiante.nombre}">
+                    Nombre del estudiante
+                </h3>
+
+                <div class="student-info">
+                    <p>
+                        <strong>Grado:</strong>
+                        <span th:text="${estudiante.grado}">3.º B</span>
+                    </p>
+
+                    <p>
+                        <strong>Ingreso:</strong>
+                        <span th:text="${estudiante.horaIngreso}">07:45 a. m.</span>
+                    </p>
+                </div>
+
+                <p class="notification-info">
+                    <strong>Notificación a:</strong>
+                    <span th:text="${estudiante.apoderado}">
+                        Nombre del apoderado
+                    </span>
+                </p>
+
+            </div>
+
+            <!-- Estado inicial si todavía no se seleccionó un estudiante -->
+            <div class="empty-list" th:if="${estudiante == null}">
+                <i class="bi bi-person-search"></i>
+                <p class="mb-0">
+                    Los datos del estudiante aparecerán aquí después de identificar su QR.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- LISTA DE INGRESOS -->
+        <section class="content-card p-4 mb-4">
+
+            <div class="d-flex flex-wrap justify-content-between
+                        align-items-center gap-2 mb-3">
+
+                <h2 class="section-title mb-0">
+                    <i class="bi bi-people me-2"></i>
+                    Estudiantes ingresados
+                </h2>
+
+                <span class="total-badge">
+                    Total:
+                    <span th:text="${totalIngresos != null ? totalIngresos : 0}">0</span>
+                </span>
+            </div>
+
+            <!--
+                FUTURO SPRING BOOT:
+                El controlador enviará una lista llamada "ingresos".
+                Thymeleaf generará una fila por cada registro.
+            -->
+            <div class="income-list" th:if="${ingresos != null and !ingresos.isEmpty()}">
+
+                <div class="income-item" th:each="ingreso : ${ingresos}">
+
+                    <i class="bi bi-check-circle-fill income-icon"></i>
+
+                    <div class="income-student">
+                        <h3 th:text="${ingreso.nombreEstudiante}">
+                            Nombre del estudiante
+                        </h3>
+
+                        <p>
+                            <span th:text="${ingreso.grado}">3.º B</span>
+                            · Ingreso confirmado
+                        </p>
+                    </div>
+
+                    <div class="income-time">
+                        <small>Hora</small>
+                        <span th:text="${ingreso.horaIngreso}">
+                            07:45 a. m.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Mensaje cuando la lista está vacía -->
+            <div class="empty-list" th:if="${ingresos == null or ingresos.isEmpty()}">
+
+                <i class="bi bi-clipboard-check"></i>
+
+                <p class="mb-1 fw-semibold">
+                    Todavía no hay ingresos registrados
+                </p>
+
+                <p class="mb-0">
+                    Los estudiantes aparecerán aquí cuando se registre su ingreso.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+    <!-- SECCIÓN FINAL: ESCANEAR CÓDIGO QR -->
+    <section class="content-card p-4 mb-4 text-center">
+
+        <form th:action="@{/ingresos/escanear}" method="post">
+
+            <input type="hidden" name="codigoQr" id="codigoQr" value="">
+
+            <button type="submit" class="btn btn-success btn-scan">
+                <i class="bi bi-qr-code-scan me-2"></i>
+                Escanear Código QR
+            </button>
+
+        </form>
+
+    </section>
+
+</body>
+
+</html>

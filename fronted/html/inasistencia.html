@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidCheck | Reportar inasistencia</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/inasistencia.css">
+</head>
+<body>
+
+<header class="site-header">
+    <nav class="navbar">
+        <div class="container header-content">
+            <a href="padres.html" class="navbar-brand">
+                <span class="brand-icon"><i class="bi bi-check-lg"></i></span>
+                KidCheck
+            </a>
+
+            <a href="padres.html" class="btn btn-outline-success">
+                <i class="bi bi-person-switch me-1"></i>
+                Cambiar apoderado
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main class="container main-container">
+
+    <section class="welcome">
+        <span class="eyebrow">PORTAL PARA APODERADOS</span>
+        <h1>Hola, Marisol</h1>
+        <p>Informa al colegio si tu hijo no asistirá a clases.</p>
+    </section>
+
+    <section class="content-card">
+
+        <div class="card-heading">
+            <div>
+                <span class="eyebrow">ASISTENCIA DE HOY</span>
+                <h2>Reportar una inasistencia</h2>
+            </div>
+
+            <span class="status-badge pending-badge">
+                <i class="bi bi-clock-fill"></i>
+                Pendiente
+            </span>
+        </div>
+
+        <div class="warning-box">
+            <div class="warning-icon">
+                <i class="bi bi-exclamation-lg"></i>
+            </div>
+
+            <div>
+                <h3>Aún sin ingreso registrado</h3>
+                <p>
+                    Camila Torres todavía no registra su ingreso al colegio.
+                </p>
+
+                <div class="deadline">
+                    <i class="bi bi-clock-history"></i>
+                    Horario límite: <strong>07:45 a. m.</strong>
+                    + 30 minutos de tolerancia
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-heading">
+            <div>
+                <h3>Justificar inasistencia</h3>
+                <p>
+                    Cuéntanos el motivo para informar al colegio.
+                </p>
+            </div>
+        </div>
+
+        <form action="#" method="post" enctype="multipart/form-data">
+
+            <div class="mb-4">
+                <label for="codigo" class="form-label">
+                    Código de matrícula
+                </label>
+
+                <input
+                    type="text"
+                    id="codigo"
+                    name="codigo"
+                    class="form-control"
+                    value="E001"
+                    readonly>
+            </div>
+
+            <div class="mb-4">
+                <label for="motivo" class="form-label">
+                    Motivo de la inasistencia
+                </label>
+
+                <select id="motivo" name="motivo" class="form-select" required>
+                    <option value="" selected disabled>
+                        Selecciona un motivo
+                    </option>
+                    <option value="Enfermedad">Enfermedad</option>
+                    <option value="Cita médica">Cita médica</option>
+                    <option value="Viaje familiar">Viaje familiar</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="detalle" class="form-label">
+                    Detalle del motivo
+                </label>
+
+                <textarea
+                    id="detalle"
+                    name="detalle"
+                    class="form-control"
+                    rows="4"
+                    placeholder="Si seleccionaste Otro, explica el motivo aquí."></textarea>
+            </div>
+
+            <div class="mb-4">
+                <label for="documento" class="form-label">
+                    Adjuntar justificación
+                    <span class="required">*</span>
+                </label>
+
+                <div class="upload-box">
+                    <i class="bi bi-cloud-arrow-up"></i>
+                    <strong>Adjunta tu certificado o documento</strong>
+                    <p>Formatos permitidos: PDF, JPG o PNG.</p>
+
+                    <input
+                        type="file"
+                        id="documento"
+                        name="documento"
+                        class="form-control"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required>
+                </div>
+            </div>
+
+            <div class="privacy-note">
+                <i class="bi bi-shield-check"></i>
+                <p>
+                    El reporte será destinado al colegio para informar
+                    sobre la ausencia del estudiante.
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-kidcheck w-100">
+                <i class="bi bi-send me-2"></i>
+                Enviar reporte al colegio
+            </button>
+
+        </form>
+
+        <hr class="section-divider">
+
+        <div class="section-heading">
+            <div>
+                <h3>Notificaciones de hoy</h3>
+                <p>Avisos de asistencia de tu hijo.</p>
+            </div>
+
+            <span class="notification-count">0</span>
+        </div>
+
+        <div class="empty-state">
+            <div class="empty-icon">
+                <i class="bi bi-bell-slash"></i>
+            </div>
+
+            <h4>Sin notificaciones todavía</h4>
+            <p>
+                Aparecerán aquí en cuanto se registre el ingreso.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>KidCheck · Control de asistencia escolar</p>
+    <small>Portal para padres de familia</small>
+</footer>
+
+</body>
+</html>

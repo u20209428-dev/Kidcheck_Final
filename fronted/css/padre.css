@@ -1,0 +1,359 @@
+
+:root {
+    --green: #16a37a;
+    --green-dark: #108663;
+    --green-light: #e7f7f0;
+    --ink: #24352f;
+    --ink-600: #64756d;
+    --border: #e2ebe6;
+    --background: #f5f8f6;
+    --white: #ffffff;
+    --radius: 18px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    color: var(--ink);
+    font-family: Inter, Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Encabezado web */
+
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 78px;
+}
+
+.navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--ink);
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.navbar-brand:hover {
+    color: var(--green-dark);
+}
+
+.brand-icon {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.portal-label {
+    color: var(--ink-600);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Contenido */
+
+.main-container {
+    flex: 1;
+    width: 100%;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.presentation-column {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--green-dark);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.presentation-column h1 {
+    max-width: 520px;
+    margin-bottom: 22px;
+    font-size: clamp(2rem, 4vw, 3.15rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -1.4px;
+}
+
+.presentation-text {
+    max-width: 480px;
+    margin-bottom: 32px;
+    color: var(--ink-600);
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Beneficios */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.feature-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 1.25rem;
+}
+
+.feature-item strong {
+    display: block;
+    margin: 2px 0 5px;
+    font-size: 0.94rem;
+}
+
+.feature-item p {
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+/* Formulario */
+
+.login-card {
+    padding: 38px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: 0 14px 40px rgba(36, 53, 47, 0.07);
+}
+
+.form-heading {
+    margin-bottom: 30px;
+}
+
+.form-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: var(--green-light);
+    color: var(--green-dark);
+    font-size: 1.6rem;
+}
+
+.form-heading h2 {
+    margin-bottom: 10px;
+    font-size: 1.65rem;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+.form-heading p {
+    margin: 0;
+    color: var(--ink-600);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+/* Campos */
+
+.field .form-label {
+    margin-bottom: 9px;
+    color: var(--ink);
+    font-size: 0.86rem;
+    font-weight: 600;
+}
+
+.field .form-control {
+    min-height: 50px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: #fbfdfb;
+    color: var(--ink);
+    font-size: 0.9rem;
+    box-shadow: none;
+}
+
+.field .form-control::placeholder {
+    color: #9aa8a0;
+}
+
+.field .form-control:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(22, 163, 122, 0.12);
+}
+
+/* Botón */
+
+.btn-kidcheck {
+    min-height: 51px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 11px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 0.94rem;
+    font-weight: 700;
+    transition: background 0.2s ease;
+}
+
+.btn-kidcheck:hover,
+.btn-kidcheck:focus {
+    background: var(--green-dark);
+    color: var(--white);
+}
+
+/* Nota informativa */
+
+.security-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 23px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--ink-600);
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+.security-note i {
+    color: var(--green-dark);
+    font-size: 1rem;
+}
+
+/* Pie de página */
+
+.site-footer {
+    padding: 25px 15px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.site-footer p {
+    margin: 0 0 5px;
+    color: var(--ink);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.site-footer small {
+    color: var(--ink-600);
+    font-size: 0.78rem;
+}
+
+/* Adaptación a tabletas y celulares */
+
+@media (max-width: 991.98px) {
+    .main-container {
+        max-width: 720px;
+        padding-top: 40px;
+        padding-bottom: 45px;
+    }
+
+    .presentation-column {
+        padding-top: 10px;
+        padding-bottom: 35px;
+    }
+
+    .presentation-column h1 {
+        max-width: 650px;
+    }
+
+    .feature-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .navbar {
+        min-height: 68px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .brand-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .portal-label {
+        max-width: 135px;
+        font-size: 0.75rem;
+        text-align: right;
+    }
+
+    .main-container {
+        padding-top: 25px;
+        padding-bottom: 35px;
+    }
+
+    .presentation-column {
+        padding-bottom: 25px;
+    }
+
+    .presentation-column h1 {
+        font-size: 2rem;
+        letter-spacing: -0.8px;
+    }
+
+    .presentation-text {
+        font-size: 0.92rem;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .login-card {
+        padding: 25px 20px;
+    }
+
+    .form-heading h2 {
+        font-size: 1.45rem;
+    }
+}

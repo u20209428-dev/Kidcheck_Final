@@ -1,0 +1,188 @@
+<!--PADRE SE CONECTA A INGRESO SI EL EL ALUMNO REGISTRO SU ASISTENCIA-->
+<!--PADRE SE CONECTA A INASISTENCIA SI EL EL ALUMNO NO REGISTRA ASISTENCIA-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KidCheck | Portal para padres</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/padre.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+
+                <a href="index.html" class="navbar-brand">
+                    <span class="brand-icon">
+                        <i class="bi bi-check-lg"></i>
+                    </span>
+                    <span>KidCheck</span>
+                </a>
+
+                <span class="portal-label">
+                    Portal para padres y apoderados
+                </span>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="container main-container">
+
+        <div class="row justify-content-center align-items-center">
+
+            <!-- PRESENTACIÓN -->
+            <div class="col-lg-5 presentation-column">
+
+                <span class="eyebrow">
+                    CONTROL DE ASISTENCIA ESCOLAR
+                </span>
+
+                <h1>
+                    La tranquilidad de saber que tu hijo llegó.
+                </h1>
+
+                <p class="presentation-text">
+                    Consulta el ingreso de tu hijo al colegio y mantente
+                    informado sobre sus asistencias y notificaciones.
+                </p>
+
+                <div class="feature-list">
+
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <i class="bi bi-check-circle"></i>
+                        </span>
+                        <div>
+                            <strong>Confirmación de ingreso</strong>
+                            <p>Consulta la hora de llegada al colegio.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <i class="bi bi-bell"></i>
+                        </span>
+                        <div>
+                            <strong>Notificaciones escolares</strong>
+                            <p>Infórmate sobre avisos de asistencia.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-icon">
+                            <i class="bi bi-calendar-check"></i>
+                        </span>
+                        <div>
+                            <strong>Historial de asistencia</strong>
+                            <p>Consulta los registros de tu hijo.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FORMULARIO -->
+            <div class="col-lg-5 offset-lg-1">
+
+                <section class="login-card">
+
+                    <div class="form-heading">
+                        <div class="form-icon">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+
+                        <h2>Ingresa tus datos</h2>
+
+                        <p>
+                            Completa tus datos para identificar al apoderado
+                            y al estudiante.
+                        </p>
+                    </div>
+
+                    <form action="#" method="get">
+
+                        <div class="field mb-4">
+                            <label for="padreNombre" class="form-label">
+                                Nombre del apoderado
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="padreNombre"
+                                name="padreNombre"
+                                placeholder="Ej. Marisol Vidal"
+                                autocomplete="name"
+                                required>
+                        </div>
+
+                        <div class="field mb-4">
+                            <label for="padreTelefono" class="form-label">
+                                Teléfono
+                            </label>
+
+                            <input
+                                type="tel"
+                                class="form-control"
+                                id="padreTelefono"
+                                name="padreTelefono"
+                                placeholder="Ej. 969 214 305"
+                                autocomplete="tel"
+                                required>
+                        </div>
+
+                        <div class="field mb-4">
+                            <label for="codigoEstudiante" class="form-label">
+                                Código de matrícula del estudiante
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="codigoEstudiante"
+                                name="codigoEstudiante"
+                                placeholder="Ingresa el código de matrícula"
+                                autocomplete="off"
+                                required>
+                        </div>
+
+                        <button type="submit" class="btn btn-kidcheck w-100">
+                            Continuar
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="security-note">
+                        <i class="bi bi-shield-check"></i>
+                        Tus datos se utilizarán para identificar al apoderado.
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>KidCheck · Control de asistencia escolar</p>
+            <small>Portal para padres de familia</small>
+        </div>
+    </footer>
+
+</body>
+</html>
